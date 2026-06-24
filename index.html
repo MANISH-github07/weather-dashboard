@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Live Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <aside class="sidebar">
+        <div class="logo">
+          <span></span>
+          <h1>LIVE WEATHER DASHBOARD</h1>
+        </div>
+
+        <div class="search-box">
+          <label>SEARCH CITY</label>
+          <div class="search-row">
+            <input
+              type="text"
+              id="cityInput"
+              placeholder="e.g. Tokyo, London"
+            />
+            <button id="searchBtn">🔍 Search</button>
+          </div>
+        </div>
+
+        <div class="recent">
+          <h3>◷ RECENT SEARCHES</h3>
+          <div id="recentList"></div>
+        </div>
+
+        <div class="saved">
+          <h3>SAVED LOCATIONS</h3>
+          <div class="coming">Coming soon</div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <p id="currentDate"></p>
+        </header>
+
+        <section class="hero">
+          <div>
+            <p class="location-label">⌖ CURRENT LOCATION</p>
+            <h2>
+              <span id="cityName">New York</span>
+              <small id="countryName">US</small>
+            </h2>
+
+            <div class="status">
+              <span id="weatherIcon">🌥️</span>
+              <span id="weatherDesc">Partly Cloudy</span>
+              <small id="localTime">14:32 LOCAL</small>
+            </div>
+          </div>
+
+          <div class="temp-large">
+            <h1><span id="mainTemp">24</span><sup>°C</sup></h1>
+            <p>feels <span id="feelsLike">26</span>°</p>
+          </div>
+        </section>
+
+        <div class="section-title">
+          <span></span>
+          <p>CONDITIONS</p>
+          <span></span>
+        </div>
+
+        <section class="conditions">
+          <div class="card">
+            <h4>🌡 TEMPERATURE</h4>
+            <h3><span id="tempCard">24</span><small>°C</small></h3>
+          </div>
+
+          <div class="card">
+            <h4>💧 HUMIDITY</h4>
+            <h3><span id="humidity">61</span><small>%</small></h3>
+          </div>
+
+          <div class="card">
+            <h4>💨 WIND SPEED</h4>
+            <h3><span id="windSpeed">14</span><small>km/h</small></h3>
+          </div>
+        </section>
+
+        <section class="forecast-section">
+          <h2>5-DAY FORECAST</h2>
+          <div class="forecast" id="forecast"></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

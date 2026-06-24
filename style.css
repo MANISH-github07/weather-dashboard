@@ -1,0 +1,332 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", monospace, sans-serif;
+}
+
+body {
+  background: #1d2456;
+  color: white;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 344px 1fr;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #1c2353;
+  border-right: 1px solid #35406f;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border-bottom: 1px solid #35406f;
+}
+
+.logo span {
+  width: 9px;
+  height: 30px;
+  background: #38c4ff;
+  border-radius: 10px;
+}
+
+.logo h1 {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.search-box {
+  padding: 28px 20px;
+  border-bottom: 1px solid #35406f;
+}
+
+.search-box label,
+.recent h3,
+.saved h3 {
+  color: #8ca8ff;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.search-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.search-row input {
+  flex: 1;
+  padding: 14px;
+  background: #252b5d;
+  border: 1px solid #3a4575;
+  color: white;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-row button {
+  padding: 0 18px;
+  border: none;
+  background: #38c4ff;
+  color: #07111f;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.recent {
+  padding: 26px 20px;
+}
+
+.recent-item {
+  background: #223968;
+  border: 1px solid #2868a5;
+  color: #38c4ff;
+  padding: 14px;
+  margin-top: 16px;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.saved {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 24px;
+}
+
+.coming {
+  margin-top: 16px;
+  height: 80px;
+  border: 1px dashed #303a68;
+  color: #4e5b8d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.main {
+  padding: 24px 40px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: flex-end;
+  color: #9db0ff;
+  letter-spacing: 4px;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 64px;
+}
+
+.location-label {
+  color: #8ca8ff;
+  letter-spacing: 3px;
+  font-size: 16px;
+}
+
+.hero h2 {
+  font-size: 46px;
+  margin-top: 8px;
+  letter-spacing: 4px;
+}
+
+.hero h2 small {
+  color: #8ca8ff;
+  font-size: 22px;
+  letter-spacing: 0;
+}
+
+.status {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #91a9ff;
+  font-size: 20px;
+}
+
+.status small {
+  border: 1px solid #35406f;
+  padding: 5px 10px;
+  color: #6476b5;
+  font-size: 12px;
+}
+
+.temp-large h1 {
+  font-size: 96px;
+  line-height: 1;
+}
+
+.temp-large sup {
+  font-size: 20px;
+  color: #8ca8ff;
+}
+
+.temp-large p {
+  color: #8ca8ff;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 48px 0 20px;
+}
+
+.section-title span {
+  height: 1px;
+  background: #35406f;
+  flex: 1;
+}
+
+.section-title p {
+  color: #8ca8ff;
+  letter-spacing: 3px;
+  font-size: 13px;
+}
+
+.conditions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  background: #252b5d;
+  border: 1px solid #38426f;
+  padding: 22px;
+  min-height: 110px;
+}
+
+.card h4 {
+  color: #8ca8ff;
+  letter-spacing: 2px;
+  font-size: 16px;
+}
+
+.card h3 {
+  margin-top: 8px;
+  font-size: 42px;
+}
+
+.card small {
+  color: #8ca8ff;
+  font-size: 16px;
+}
+
+.forecast-section {
+  margin-top: 40px;
+}
+
+.forecast-section h2 {
+  font-size: 21px;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #35406f;
+  padding-bottom: 14px;
+}
+
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 32px;
+}
+
+.forecast-card {
+  background: #252b5d;
+  border: 1px solid #38426f;
+  min-height: 270px;
+  padding: 20px;
+  text-align: center;
+}
+
+.forecast-card h3 {
+  color: #8ca8ff;
+  letter-spacing: 2px;
+}
+
+.forecast-card .date {
+  color: #6577b7;
+  margin: 16px 0;
+}
+
+.forecast-card .icon {
+  font-size: 34px;
+  margin: 16px 0;
+}
+
+.forecast-card .desc {
+  color: #8ca8ff;
+}
+
+.forecast-card .degrees {
+  margin-top: 18px;
+  font-size: 22px;
+}
+
+.forecast-card .degrees span {
+  color: #8ca8ff;
+  font-size: 18px;
+}
+
+.precip {
+  margin-top: 24px;
+  text-align: left;
+  color: #6577b7;
+  font-size: 13px;
+}
+
+.progress {
+  height: 3px;
+  background: #303a68;
+  margin-top: 8px;
+}
+
+.progress div {
+  height: 100%;
+  background: #38c4ff;
+}
+
+@media (max-width: 1000px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: static;
+  }
+
+  .saved {
+    position: static;
+    margin: 20px;
+  }
+
+  .hero,
+  .conditions,
+  .forecast {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast {
+    display: grid;
+  }
+
+  .hero {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
