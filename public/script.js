@@ -1,5 +1,3 @@
-const API_KEY = "31821b41920e810ec8bbb8e82ec8c965";
-
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
 const recentList = document.getElementById("recentList");
@@ -49,35 +47,25 @@ async function getWeather(city) {
   try {
     city = city.trim();
 
-    const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${API_KEY}`;
-    const forecastURL = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${API_KEY}`;
+    const response = await fetch(
+      `http://localhost:3000/api/weather/${encodeURIComponent(city)}`,
+    );
 
-    const weatherRes = await fetch(weatherURL);
-    const forecastRes = await fetch(forecastURL);
+    const data = await response.json();
 
-    const weatherData = await weatherRes.json();
-    const forecastData = await forecastRes.json();
-
-    if (weatherData.cod === 401) {
-      alert("Invalid API key. Please add correct OpenWeather API key.");
+    if (!response.ok) {
+      alert(data.error || "Weather data not available.");
       return;
     }
 
-    if (weatherData.cod === "404") {
-      alert("City not found! Try city name like Mumbai, Delhi, Nagpur.");
-      return;
-    }
-
-    if (!weatherRes.ok || !forecastRes.ok) {
-      alert("Weather data not available.");
-      return;
-    }
+    const weatherData = data.currentWeather;
+    const forecastData = data.forecast;
 
     updateCurrentWeather(weatherData);
     updateForecast(forecastData);
     addRecentCity(weatherData.name);
   } catch (error) {
-    alert("Network error. Check internet connection.");
+    alert("Network error. Make sure backend server is running.");
     console.log(error);
   }
 }
