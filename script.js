@@ -194,4 +194,4 @@ cityInput.addEventListener("keydown", (e) => {
 
 setCurrentDate();
 renderRecentCities();
-getWeather("New York");
+getWeather("Wardha");
