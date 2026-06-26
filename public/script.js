@@ -47,9 +47,7 @@ async function getWeather(city) {
   try {
     city = city.trim();
 
-    const response = await fetch(
-      `http://localhost:3000/api/weather/${encodeURIComponent(city)}`,
-    );
+    const response = await fetch(`/api/weather/${encodeURIComponent(city)}`);
 
     const data = await response.json();
 
